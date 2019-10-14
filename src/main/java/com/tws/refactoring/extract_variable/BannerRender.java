@@ -7,7 +7,7 @@ public class BannerRender {
     }
 
     private boolean isBrowserOnPlatform(String platform, String browser) {
-        if ((platform.toUpperCase().indexOf("MAC") > -1) && (browser.toUpperCase().indexOf("IE") > -1)) {
+        if ((platform.toUpperCase().contains("MAC")) && (browser.toUpperCase().contains("IE"))) {
             return true;
         }
         return false;
