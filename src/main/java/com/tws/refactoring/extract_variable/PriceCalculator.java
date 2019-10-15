@@ -5,11 +5,11 @@ public class PriceCalculator {
     private double discount = 0d;
     private double shippingCost = 0d;
     private double allExpenses = 0d;
+    private double taxRate = 0.05;
 
     double getPrice(int quantity, int itemPrice) {
-        // Price consists of: base price - discount + shipping cost
         basePrice = quantity * itemPrice;
-        discount = Math.max(0, quantity - 500) * itemPrice * 0.05;
+        discount = Math.max(0, quantity - 500) * itemPrice * taxRate;
         shippingCost = Math.min(quantity * itemPrice * 0.1, 100.0);
         allExpenses = basePrice - discount + shippingCost;
         return allExpenses;
